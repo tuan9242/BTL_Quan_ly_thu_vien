@@ -1,158 +1,206 @@
-# Hệ thống Quản lý Thư viện Đại học
+<h2 align="center">
+	<a href="https://dainam.edu.vn/vi/khoa-cong-nghe-thong-tin">
+	🎓 Faculty of Information Technology (DaiNam University)
+	</a>
+</h2>
 
-## Vấn đề đã được sửa
+<h2 align="center">
+	University Library Management System
+</h2>
 
-### 1. CSS và JavaScript không load được
-**Nguyên nhân:** Đường dẫn CSS và JavaScript không đúng
-**Giải pháp:** 
-- Sửa đường dẫn từ `/public/css/style.css` thành `css/style.css`
-- Sửa đường dẫn từ `/public/js/script.js` thành `js/script.js`
-- Sửa tất cả đường dẫn `/public/index.php` thành `index.php`
+<div align="center">
 
-### 2. File footer.php bị duplicate content
-**Nguyên nhân:** Nội dung bị lặp lại trong file
-**Giải pháp:** Tạo lại file footer.php với nội dung đúng
+[![AIoTLab](https://img.shields.io/badge/AIoTLab-green?style=for-the-badge)](https://www.facebook.com/DNUAIoTLab)
+[![Faculty of Information Technology](https://img.shields.io/badge/Faculty%20of%20Information%20Technology-blue?style=for-the-badge)](https://dainam.edu.vn/vi/khoa-cong-nghe-thong-tin)
+[![DaiNam University](https://img.shields.io/badge/DaiNam%20University-orange?style=for-the-badge)](https://dainam.edu.vn)
 
-### 3. Cấu hình URL rewriting
-**Giải pháp:** Tạo file `.htaccess` để cấu hình URL rewriting và cache
+</div>
 
-## Cách sử dụng
+## 📖 1. Giới thiệu
 
-### 1. Truy cập trang web
-- Mở trình duyệt và truy cập: `http://localhost/library-management/public/`
-- Hoặc: `http://localhost/library-management/public/index.php`
+Hệ thống Quản lý Thư viện hỗ trợ quản trị sách, người dùng, mượn/trả, thống kê và tìm kiếm trong môi trường đại học. Hệ thống thay thế việc quản lý thủ công bằng một ứng dụng web tập trung, dễ dùng, bảo mật và có khả năng mở rộng.
 
-### 2. Test CSS và JavaScript
-- Truy cập: `http://localhost/library-management/public/test.html`
-- Kiểm tra xem CSS có load đúng không
-- Click vào nút "Test JavaScript" để kiểm tra JavaScript
+## 🔧 2. Các công nghệ được sử dụng
 
-### 3. Cấu trúc thư mục
+<div align="center">
+
+### Hệ điều hành
+
+![macOS](https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=macos&logoColor=F0F0F0)
+[![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://www.microsoft.com/windows)
+[![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)](https://ubuntu.com)
+
+### Công nghệ chính
+
+[![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](#)
+[![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)](#)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](#)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
+
+### Web Server & Database
+
+[![Apache](https://img.shields.io/badge/Apache-D22128?style=for-the-badge&logo=apache&logoColor=white)](https://httpd.apache.org/)
+[![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![XAMPP](https://img.shields.io/badge/XAMPP-FB7A24?style=for-the-badge&logo=xampp&logoColor=white)](https://www.apachefriends.org/)
+
+### Database Management Tools
+
+[![MySQL Workbench](https://img.shields.io/badge/MySQL_Workbench-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://dev.mysql.com/downloads/workbench/)
+
+</div>
+
+## 🚀 3. Chức năng chính (Screens & Features)
+
+- Đăng nhập/Đăng ký người dùng, phân quyền Admin/Thủ thư/Sinh viên
+- Trang chủ, tìm kiếm sách theo từ khóa và danh mục
+- Chi tiết sách, gợi ý sách liên quan
+- Giỏ mượn, mượn/trả sách, tính phí trễ hạn
+- Quản lý sách, người dùng, mượn trả (Admin/Thủ thư)
+- Dashboard thống kê và báo cáo
+- Thông báo, lịch sử mượn trả của người dùng
+- Responsive UI, hỗ trợ trên thiết bị di động
+
+Ghi chú: Ảnh chụp màn hình có thể được bổ sung trong thư mục `docs/` (nếu cần).
+
+## ⚙️ 4. Cài đặt
+
+### 4.1. Cài đặt công cụ, môi trường
+
+- Cài đặt XAMPP (khuyến nghị PHP 8.x)
+  - Trang tải: https://www.apachefriends.org/download.html
+- Cài Visual Studio Code và các extension đề xuất:
+  - PHP Intelephense
+  - MySQL
+  - Prettier – Code Formatter
+
+### 4.2. Tải project
+
+Sao chép/giải nén project vào thư mục `htdocs` của XAMPP (ví dụ ổ D):
+
+```bash
+D:\xampp\htdocs\library-management
+```
+
+Hoặc dùng Git (nếu repo được public):
+
+```bash
+cd D:\xampp\htdocs
+git clone <REPO_URL> library-management
+```
+
+Truy cập qua trình duyệt:
+
+```
+http://localhost/library-management/public/
+```
+
+### 4.3. Khởi tạo database
+
+Mở XAMPP Control Panel → Start Apache và MySQL.
+
+Tạo database MySQL (có thể dùng MySQL Workbench hoặc phpMyAdmin):
+
+```sql
+CREATE DATABASE IF NOT EXISTS library_management
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_unicode_ci;
+```
+
+Import cấu trúc và dữ liệu mẫu:
+
+```bash
+# Cách 1: qua MySQL CLI
+mysql -u root -p library_management < database.sql
+mysql -u root -p library_management < migration_add_features.sql
+
+# Cách 2: qua phpMyAdmin / MySQL Workbench
+# - Chọn database library_management
+# - Import lần lượt: database.sql, migration_add_features.sql
+```
+
+### 4.4. Cấu hình kết nối DB
+
+Mở file `config/database.php` và cập nhật thông số cho môi trường của bạn:
+
+```php
+private $host = "localhost";
+private $db_name = "library_management";
+private $username = "root";      // thay bằng user của bạn nếu khác
+private $password = "";          // thay bằng mật khẩu thật (ví dụ trên XAMPP thường để trống)
+```
+
+Lưu ý: File hiện tại có thể chứa giá trị tạm thời. Nhớ đổi `username`/`password` cho khớp máy bạn.
+
+### 4.5. Chạy hệ thống
+
+- Start Apache và MySQL (XAMPP Control Panel)
+- Truy cập:
+
+```
+http://localhost/library-management/public/
+```
+
+Nếu server không trỏ `DocumentRoot` về `public/`, bạn có thể vào trực tiếp:
+
+```
+http://localhost/library-management/public/index.php
+```
+
+## 🧭 5. Điều hướng & Routes chính
+
+User:
+- `GET /?page=home` – Trang chủ
+- `GET /?page=search` – Tìm kiếm sách
+- `GET /?page=book-detail&id={id}` – Chi tiết sách
+- `GET /?page=my-borrows` – Sách đã mượn
+- `POST /?page=borrow-book` – Mượn sách (AJAX)
+
+Admin:
+- `GET /?page=admin-dashboard` – Dashboard
+- `GET /?page=admin-books` – Quản lý sách
+- `GET /?page=admin-users` – Quản lý người dùng
+- `GET /?page=admin-borrows` – Quản lý mượn sách
+
+Auth:
+- `GET /?page=login` – Đăng nhập
+- `GET /?page=register` – Đăng ký
+- `GET /?action=logout` – Đăng xuất
+
+## 🧩 6. Cấu trúc thư mục
+
 ```
 library-management/
-├── public/                 # Thư mục chứa file chính
-│   ├── index.php          # File chính
-│   ├── css/               # CSS files
-│   ├── js/                # JavaScript files
-│   └── test.html          # File test
-├── views/                 # Templates
-├── controllers/           # Controllers
-├── models/               # Models
-├── config/               # Configuration
-└── .htaccess             # URL rewriting
+├── public/                 # Entry point & static (css/, js/, uploads/)
+│   └── index.php
+├── views/                  # Giao diện (auth/, user/, admin/, layout/)
+├── controllers/            # Điều khiển luồng ứng dụng
+├── models/                 # Nghiệp vụ & truy cập dữ liệu
+├── config/                 # Kết nối DB, helpers
+├── assets/                 # Ảnh tĩnh
+├── database.sql            # Schema cơ bản
+├── migration_add_features.sql
+├── run_migration.php       # Script hỗ trợ migration
+├── README.md               # Tài liệu này
+└── USER_GUIDE.md           # Hướng dẫn chi tiết
 ```
 
-## Tính năng chính
+## ✅ 7. Tài khoản demo (tuỳ chọn)
 
-- ✅ **Đăng nhập/Đăng ký** - Hệ thống xác thực an toàn
-- ✅ **Tìm kiếm sách** - Tìm kiếm thông minh với bộ lọc
-- ✅ **Chi tiết sách** - Thông tin đầy đủ và sách liên quan
-- ✅ **Mượn/Trả sách** - Quản lý mượn trả tự động
-- ✅ **Quản lý sách** - CRUD operations cho admin
-- ✅ **Quản lý người dùng** - Quản lý tài khoản và quyền
-- ✅ **Dashboard** - Thống kê và báo cáo
-- ✅ **Responsive design** - Tương thích mọi thiết bị
-- ✅ **Mobile-friendly** - Tối ưu cho mobile
-- ✅ **AJAX** - Tương tác mượt mà
-- ✅ **Security** - Bảo mật cao với PDO và password hashing
+- Admin: `admin / admin123`
+- Thủ thư: `librarian / admin123`
+- Sinh viên: `student1 / admin123`
 
-## Yêu cầu hệ thống
+## 🛠️ 8. Lưu ý & Khắc phục sự cố
 
-- PHP 7.4+
-- MySQL 5.7+
-- Apache/Nginx với mod_rewrite
-- XAMPP/WAMP/LAMP
+- Bật `mod_rewrite` và (khuyến nghị) trỏ `DocumentRoot` vào thư mục `public/`
+- Nếu CSS/JS không tải: đảm bảo đường dẫn dùng dạng tương đối `css/...`, `js/...`
+- Kiểm tra quyền ghi thư mục `public/uploads/`
+- Kiểm tra lại `config/database.php` nếu không kết nối được DB
+- PHP 7.4+ và MySQL 5.7+ (khuyến nghị PHP 8.x)
 
-## Cài đặt
+## 📚 9. Hỗ trợ
 
-1. **Copy project vào thư mục web server**
-   ```bash
-   cp -r library-management /var/www/html/
-   ```
-
-2. **Import database**
-   ```bash
-   mysql -u root -p < database.sql
-   ```
-
-3. **Cấu hình database** trong `config/database.php`
-   ```php
-   private $host = "localhost";
-   private $db_name = "library_management";
-   private $username = "root";
-   private $password = "your_password";
-   ```
-
-4. **Cấu hình web server**
-   - Đảm bảo mod_rewrite được bật
-   - Cấu hình DocumentRoot trỏ đến thư mục `public/`
-
-5. **Truy cập trang web**
-   ```
-   http://localhost/library-management/public/
-   ```
-
-## Tài khoản demo
-
-- **Admin**: admin / admin123
-- **Thủ thư**: librarian / admin123
-- **Sinh viên**: student1 / admin123
-
-## Cấu trúc dự án
-
-```
-library-management/
-├── public/                 # Thư mục chứa file chính
-│   ├── index.php          # File chính (entry point)
-│   ├── css/               # CSS files
-│   ├── js/                # JavaScript files
-│   └── test.html          # File test
-├── views/                 # Templates
-│   ├── auth/              # Đăng nhập/đăng ký
-│   ├── user/              # Giao diện người dùng
-│   ├── admin/             # Giao diện admin
-│   └── layout/            # Layout chung
-├── controllers/           # Controllers
-├── models/               # Models (Business Logic)
-├── config/               # Configuration
-├── assets/               # Static assets
-├── database.sql          # Database schema
-├── .htaccess             # URL rewriting
-├── README.md             # Hướng dẫn này
-└── USER_GUIDE.md         # Hướng dẫn chi tiết
-```
-
-## API Endpoints
-
-### User Routes
-- `GET /?page=home` - Trang chủ
-- `GET /?page=search` - Tìm kiếm sách
-- `GET /?page=book-detail&id={id}` - Chi tiết sách
-- `GET /?page=my-borrows` - Sách đã mượn
-- `POST /?page=borrow-book` - Mượn sách (AJAX)
-
-### Admin Routes
-- `GET /?page=admin-dashboard` - Dashboard
-- `GET /?page=admin-books` - Quản lý sách
-- `GET /?page=admin-users` - Quản lý người dùng
-- `GET /?page=admin-borrows` - Quản lý mượn sách
-
-### Auth Routes
-- `GET /?page=login` - Đăng nhập
-- `GET /?page=register` - Đăng ký
-- `GET /?action=logout` - Đăng xuất
-
-## Lưu ý
-
-- **Bảo mật**: Đảm bảo mod_rewrite được bật và cấu hình đúng
-- **Database**: Kiểm tra kết nối và quyền truy cập
-- **Permissions**: Cấu hình quyền đọc/ghi cho thư mục
-- **PHP**: Phiên bản 7.4+ với các extension cần thiết
-- **MySQL**: Phiên bản 5.7+ với InnoDB engine
-
-## Hỗ trợ
-
-- 📖 **Tài liệu**: Xem `USER_GUIDE.md` để biết thêm chi tiết
-- 🐛 **Báo lỗi**: Tạo issue trên GitHub
-- 💬 **Thảo luận**: Sử dụng discussion forum
-- 📧 **Liên hệ**: Email support cho các vấn đề nghiêm trọng
+- Xem thêm: `USER_GUIDE.md`
+- Báo lỗi/đề xuất: tạo issue trong repository
+- Liên hệ: bộ phận hỗ trợ/kênh trao đổi của nhóm phát triển
