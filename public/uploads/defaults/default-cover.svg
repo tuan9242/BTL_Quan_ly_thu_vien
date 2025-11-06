@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="900" viewBox="0 0 600 900" role="img" aria-label="Default Book Cover">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#8a6d1d"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="600" height="900" fill="#111"/>
+  <rect x="40" y="40" width="520" height="820" rx="24" fill="url(#g)"/>
+  <g fill="#111" opacity="0.1">
+    <circle cx="120" cy="160" r="60"/>
+    <circle cx="480" cy="260" r="40"/>
+    <circle cx="300" cy="520" r="90"/>
+  </g>
+  <g font-family="Inter, Segoe UI, Arial, sans-serif" text-anchor="middle">
+    <text x="300" y="430" font-size="72" fill="#111" opacity="0.2">LIBRARY</text>
+    <text x="300" y="470" font-size="28" fill="#111" opacity="0.35">NO COVER AVAILABLE</text>
+    <g fill="#111" opacity="0.8">
+      <rect x="260" y="520" width="80" height="110" rx="6"/>
+      <rect x="268" y="530" width="64" height="10" fill="#d4af37"/>
+    </g>
+  </g>
+</svg>
+
